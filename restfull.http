@@ -1,0 +1,56 @@
+@BASE_URL = http://localhost:3000/
+
+
+POST {{BASE_URL}}user
+Content-Type: application/json
+
+{
+    "user_first_name":"Ali",
+    "user_last_name": "taş",
+    "user_city":"london",
+    "user_cisiyet":"erkek",
+    "user_blood_type":"0 rH -",
+    "user_email":"ali@gmail.com",
+    "user_password":"123456"
+}
+
+###
+GET {{BASE_URL}}user
+
+###
+POST {{BASE_URL}}user/login
+Content-Type: application/json
+
+{
+    "user_email":"jhon@gmail.com",
+    "user_password":"123456"
+}
+
+###
+DELETE {{BASE_URL}}user/60ea38008f5ac048c039682e
+
+
+
+// post için 
+###
+POST {{BASE_URL}}post
+Content-Type: application/json
+
+{
+    "post_user_name":"Veli",
+    "post_user_blood_type": "AB+",
+    "post_user_age":22,
+    "post_location":"Cerrahpaşa istanbul ",
+    "post_detail":"Acil AB+ kana ihtiyaç var"
+}
+
+
+###
+GET {{BASE_URL}}post
+
+
+###
+GET {{BASE_URL}}post/60ea3c5657ef25043c3e3095
+
+###
+DELETE {{BASE_URL}}post/60ea3d107ff57c4ed8598eff
