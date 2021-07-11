@@ -63,7 +63,7 @@ router.delete('/:userID',async (req,res) =>{
         }
         
     }catch (err) {
-        res.json({ error: "err" });
+        res.json({ message: "err" });
     }
 });
 

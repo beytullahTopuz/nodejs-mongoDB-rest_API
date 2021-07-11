@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
         res.json(posts);
     } catch (err) {
         console.log(err);
-        res.json({ error: err });
+        res.json({ message: "ERROR" });
     }
 });
 
