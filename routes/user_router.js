@@ -39,13 +39,13 @@ router.post('/login', async (req, res) => {
         }
         const passwordControl = await bcrypt.compare(req.body.user_password, user.user_password);
         if (!passwordControl) {
-            return res.json({ message: "wrong password" });
+            return res.status(400).json({ message: "wrong password" });
         }
-        return res.json(user);
+        return res.status(200).json(user);
 
 
     } catch (err) {
-        res.json({ error: "login failed" });
+        res.status(400).json({ error: "login failed" });
     }
 });
 

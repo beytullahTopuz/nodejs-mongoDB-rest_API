@@ -23,7 +23,7 @@ POST {{BASE_URL}}user/login
 Content-Type: application/json
 
 {
-    "user_email":"ali@gmail.com",
+    "user_email":"beytullah@gmail.com",
     "user_password":"123456"
 }
 
