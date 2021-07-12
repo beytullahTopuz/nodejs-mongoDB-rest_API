@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 
     try {
         const posts = await Post.find();
-        res.json(posts);
+        res.status(200).json(posts);
     } catch (err) {
         console.log(err);
         res.json({ message: "ERROR" });
