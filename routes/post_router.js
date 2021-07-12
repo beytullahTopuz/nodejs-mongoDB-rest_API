@@ -8,9 +8,9 @@ router.post('/', async (req, res) => {
     try {
         const tempPost = Post(req.body);
         const result = await tempPost.save();
-        res.json(result);
+        res.status(200).json(result);
     } catch (err) {
-        res.json({ error: "insert failed" });
+        res.status(400).json({ error: "insert failed" });
     }
 });
 
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
         res.status(200).json(posts);
     } catch (err) {
         console.log(err);
-        res.json({ message: "ERROR" });
+        res.status(400).json({ message: "ERROR" });
     }
 });
 
@@ -32,12 +32,12 @@ router.get('/:postID', async (req,res) =>{
     try{
         const post = await Post.findById(req.params.postID);
         if(post){
-            return res.json(post);
+            return res.status(200).json(post);
         }else{
-            return res.json({message: "post not found"});
+            return res.status(400).json({message: "post not found"});
         }
     }catch (err) {
-        res.json({ error: "error" });
+        res.status(400).json({ error: "error" });
     }
 });
 
@@ -47,7 +47,7 @@ router.delete('/:postID',async (req,res) =>{
     try{
         const result = await Post.findByIdAndDelete({_id:req.params.postID});
         if (result) {
-            return res.json({ message: "post deleted" });
+            return res.status(200).json({ message: "post deleted" });
         } else {
             return res.status(404).json({
                 message: "post not found"
@@ -56,7 +56,7 @@ router.delete('/:postID',async (req,res) =>{
         }
         
     }catch (err) {
-        res.json({ error: "err" });
+        res.status(400).json({ error: "err" });
     }
 });
 

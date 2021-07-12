@@ -21,9 +21,10 @@ router.post('/', async (req, res) => {
         const tempUser = User(req.body);
         tempUser.user_password = await bcrypt.hash(tempUser.user_password, 8);
         const result = await tempUser.save();
-        res.json(result);
+    
+        res.status(200).status.json(result);
     } catch (err) {
-        res.json({ error: "insert failed" });
+        res.status(400).json({ error: "insert failed" });
     }
 });
 
@@ -54,7 +55,7 @@ router.delete('/:userID',async (req,res) =>{
     try{
         const result = await User.findByIdAndDelete({_id:req.params.userID});
         if (result) {
-            return res.json({ message: "user deleted" });
+            return res.status(200).json({ message: "user deleted" });
         } else {
             return res.status(404).json({
                 message: "user not found"
@@ -63,7 +64,7 @@ router.delete('/:userID',async (req,res) =>{
         }
         
     }catch (err) {
-        res.json({ message: "err" });
+        res.status(400).json({ message: "err" });
     }
 });
 

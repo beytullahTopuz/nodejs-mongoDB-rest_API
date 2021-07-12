@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{BASE_URL}}user/60ea38008f5ac048c039682e
+DELETE {{BASE_URL}}user/60ea2c5a59d0d2107ca7334e
 
 
 
@@ -51,7 +51,7 @@ GET {{BASE_URL}}post
 
 
 ###
-GET {{BASE_URL}}post/60ea3c5657ef25043c3e3095
+GET {{BASE_URL}}post/60eb599c0b02ff3154a9dfc4
 
 ###
-DELETE {{BASE_URL}}post/60ea3d107ff57c4ed8598eff
+DELETE {{BASE_URL}}post/60ea2c5a59d0d2107ca7334d
